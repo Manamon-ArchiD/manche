@@ -61,21 +61,22 @@ const router = Router();
  */
 
 // Route: Créer une nouvelle manche dans un match
-router.post('/:matchId/round', createRound);
+router.post('/', createRound);
 
 /**
  * @swagger
- * /match/{matchId}/round:
+ * /round:
  *   post:
  *     summary: Créer une nouvelle manche dans un match
  *     tags: [Round]
- *     parameters:
- *       - in: path
- *         name: matchId
- *         required: true
- *         description: ID du match
- *         schema:
- *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Round'
+ *           example:
+ *             matchId : "123456"
  *     responses:
  *       201:
  *         description: Manche créée avec succès.
@@ -92,11 +93,11 @@ router.post('/:matchId/round', createRound);
 
 
 // Route: Mettre à jour une manche
-router.put('/:matchId/round/:roundNumber', updateRound);
+router.put('/:matchId/:roundNumber', updateRound);
 
 /**
  * @swagger
- * /match/{matchId}/round/{roundNumber}:
+ * /round/{matchId}/{roundNumber}:
  *   put:
  *     summary: Mettre à jour une manche
  *     tags: [Round]
@@ -141,11 +142,11 @@ router.put('/:matchId/round/:roundNumber', updateRound);
 
 
 // Route: Consulter les détails d'une manche
-router.get('/:matchId/round/:roundId', getRound);
+router.get('/:matchId/:roundNumber', getRound);
 
 /**
  * @swagger
- * /round/{roundId}:
+ * /round/{matchId}/{roundNumber}:
  *   get:
  *     summary: Consulter les détails d'une manche
  *     tags: [Round]

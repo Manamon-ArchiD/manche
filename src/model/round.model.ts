@@ -10,6 +10,7 @@ const RoundSchema: Schema = new Schema(
     scoreA: { type: Number, required: true },
     scoreB: { type: Number, required: true },
     winnerId: { type: String, required: true },
+    matchId: { type: String, required: true },
   },
   { timestamps: true }
 );
