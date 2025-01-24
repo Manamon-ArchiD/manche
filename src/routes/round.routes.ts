@@ -3,10 +3,6 @@ import { createRound, getRound, getRounds, updateRound } from '../controller/rou
 
 const router = Router();
 
-// POST /match/{matchId}/round : Créer une nouvelle manche dans un match.
-// PUT /match/{matchId}/round/{roundId} : Mettre à jour le résultat ou l’état d’une manche.
-// GET /match/{matchId}/round/{roundId} : Consulter les détails d’une manche
-// GET /match/{matchId}/round : Consulter la liste des manches d’un match.
 
 /**
  * @swagger
