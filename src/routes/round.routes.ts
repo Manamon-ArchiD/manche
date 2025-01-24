@@ -154,9 +154,9 @@ router.get('/:matchId/:roundNumber', getRound);
  *         schema:
  *           type: string
  *       - in: path
- *         name: roundId
+ *         name: roundNumber
  *         required: true
- *         description: ID de la manche
+ *         description: Numéro de la manche
  *         schema:
  *           type: string
  *     responses:
