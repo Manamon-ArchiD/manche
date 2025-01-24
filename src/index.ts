@@ -6,7 +6,7 @@ import {connectDB} from './db';
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3001;
 
 // Middleware to parse JSON
 app.use(express.json());
