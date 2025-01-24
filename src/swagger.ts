@@ -15,7 +15,7 @@ const swaggerOptions = {
       servers: ['http://localhost:3001']
     }
   },
-  apis: ['./src/routes/*.ts', './src/types/*.ts']
+  apis: ['./routes/*.ts', './types/*.ts']
 };
 
 export const swaggerSpec = swaggerJSDoc(swaggerOptions);

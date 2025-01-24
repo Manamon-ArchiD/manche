@@ -2,6 +2,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import swaggerUi from 'swagger-ui-express';
 import router from './routes/round.routes';
 import { swaggerSpec } from './swagger';
+import {connectDB} from './db';
 require('dotenv').config();
 
 const app = express();
@@ -9,6 +10,8 @@ const PORT = process.env.PORT;
 
 // Middleware to parse JSON
 app.use(express.json());
+
+connectDB();
 
 // Sample route with round.router.ts
 app.use('/round', router);

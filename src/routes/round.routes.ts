@@ -51,23 +51,13 @@ const router = Router();
  *           type: number
  *           description: Score de l'équipe B.
  *           example: 3
- * 
  *         winnerId:
- *           type: string
- *           description: ID du gagnant de la manche.
- *           example: "teamA123"
+ *          type: string
+ *          description: ID de l'équipe gagnante.
+ *          example: "teamA123"
  * 
- *         createdAt:
- *           type: string
- *           format: date-time
- *           description: Date de création.
- *           example: "2023-01-20T15:23:45Z"
  * 
- *         updatedAt:
- *           type: string
- *           format: date-time
- *           description: Date de mise à jour.
- *           example: "2023-01-25T11:00:00Z"
+
  */
 
 // Route: Créer une nouvelle manche dans un match
@@ -86,18 +76,6 @@ router.post('/:matchId/round', createRound);
  *         description: ID du match
  *         schema:
  *           type: string
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             $ref: '#/components/schemas/Round'
- *           example:
- *             number: 1
- *             status: "pending"
- *             scoreA: 0
- *             scoreB: 0
- *             winnerId: ""
  *     responses:
  *       201:
  *         description: Manche créée avec succès.
@@ -113,14 +91,14 @@ router.post('/:matchId/round', createRound);
 
 
 
-// Route: Mettre à jour le résultat ou l'état d'une manche
-router.put('/round/:roundId', updateRound);
+// Route: Mettre à jour une manche
+router.put('/:matchId/round/:roundNumber', updateRound);
 
 /**
  * @swagger
- * /round/{roundId}:
+ * /match/{matchId}/round/{roundNumber}:
  *   put:
- *     summary: Mettre à jour le résultat ou l'état d'une manche
+ *     summary: Mettre à jour une manche
  *     tags: [Round]
  *     parameters:
  *       - in: path
@@ -130,9 +108,9 @@ router.put('/round/:roundId', updateRound);
  *         schema:
  *           type: string
  *       - in: path
- *         name: roundId
+ *         name: roundNumber
  *         required: true
- *         description: ID de la manche
+ *         description: Numéro de la manche
  *         schema:
  *           type: string
  *     requestBody:
