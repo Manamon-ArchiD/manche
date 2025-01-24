@@ -176,4 +176,31 @@ router.get('/:matchId/:roundNumber', getRound);
  *         description: Erreur interne du serveur.
  */
 
+router.get('/:matchId/', getRounds);
+
+/**
+ * @swagger
+ * /round/{matchId}/:
+ *   get:
+ *     summary: Consulter les manches d'un match
+ *     tags: [Round]
+ *     parameters:
+ *       - in: path
+ *         name: matchId
+ *         required: true
+ *         description: ID du match
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Détails de la manche récupérés avec succès.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Round'
+ *       500:
+ *         description: Erreur interne du serveur.
+ */
+
 export default router;
+
