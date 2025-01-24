@@ -114,11 +114,11 @@ router.post('/:matchId/round', createRound);
 
 
 // Route: Mettre à jour le résultat ou l'état d'une manche
-router.put('/:matchId/round/:roundId', updateRound);
+router.put('/round/:roundId', updateRound);
 
 /**
  * @swagger
- * /match/{matchId}/round/{roundId}:
+ * /round/{roundId}:
  *   put:
  *     summary: Mettre à jour le résultat ou l'état d'une manche
  *     tags: [Round]
@@ -167,7 +167,7 @@ router.get('/:matchId/round/:roundId', getRound);
 
 /**
  * @swagger
- * /match/{matchId}/round/{roundId}:
+ * /round/{roundId}:
  *   get:
  *     summary: Consulter les détails d'une manche
  *     tags: [Round]
@@ -196,40 +196,5 @@ router.get('/:matchId/round/:roundId', getRound);
  *       500:
  *         description: Erreur interne du serveur.
  */
-
-
-// Route: Consulter la liste des manches d'un match
-router.get('/:matchId/round', getRounds);
-
-/**
- * @swagger
- * /match/{matchId}/round:
- *   get:
- *     summary: Consulter la liste des manches d'un match
- *     tags: [Round]
- *     parameters:
- *       - in: path
- *         name: matchId
- *         required: true
- *         description: ID du match
- *         schema:
- *           type: string
- *     responses:
- *       200:
- *         description: Liste des manches récupérée avec succès.
- *         content:
- *           application/json:
- *             schema:
- *               type: array
- *               items:
- *                 $ref: '#/components/schemas/Round'
- *       404:
- *         description: Match introuvable.
- *       500:
- *         description: Erreur interne du serveur.
- */
-
-
-
 
 export default router;
