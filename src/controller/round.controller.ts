@@ -5,7 +5,6 @@ export const createRound: RequestHandler = async (req: Request, res: Response, n
     try {
         const matchId = req.body.matchId;
         const roundCount = await Round.countDocuments({ matchId });
-        console.log(matchId, roundCount);
         
         const round = new Round({
             number: roundCount + 1,

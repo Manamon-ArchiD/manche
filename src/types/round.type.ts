@@ -5,6 +5,7 @@ export interface Round {
     scoreA: number;
     scoreB: number;
     winnerId: string;
+    matchId: string;
     createdAt: Date;
     updatedAt: Date;
 }

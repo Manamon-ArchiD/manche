@@ -6,6 +6,7 @@ Lien vers le doc de l'architechtures des microservices : [doc archi](https://doc
 
 ```bash
 npm i
+npm run build
 npm run start
 ```
 

@@ -1,4 +1,3 @@
-// filepath: /Users/user/Documents/tp/archi_distribue/Manamon-ArchiD/manche/src/model/round.model.ts
 import mongoose, { Document, Schema } from 'mongoose';
 import { Round } from '../types/round.type';
 
